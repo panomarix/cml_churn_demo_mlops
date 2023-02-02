@@ -122,7 +122,7 @@ spark = SparkSession\
     .master("local[*]")\
     .getOrCreate()
 
-df = spark.sql("SELECT * FROM default.telco_churn").toPandas()
+df = spark.sql("SELECT * FROM default.telco_churn_data").toPandas()
 
 # Get the various Model CRN details
 HOST = os.getenv("CDSW_API_URL").split(":")[0] + "://" + os.getenv("CDSW_DOMAIN")

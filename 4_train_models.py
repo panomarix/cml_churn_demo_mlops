@@ -141,8 +141,8 @@ try:
         .master("local[*]")\
         .getOrCreate()
 
-    if (spark.sql("SELECT count(*) FROM default.telco_churn").collect()[0][0] > 0):
-        df = spark.sql("SELECT * FROM default.telco_churn").toPandas()
+    if (spark.sql("SELECT count(*) FROM default.telco_churn_data").collect()[0][0] > 0):
+        df = spark.sql("SELECT * FROM default.telco_churn_data").toPandas()
 except:
     print("Hive table has not been created")
     df = pd.read_csv(os.path.join(
